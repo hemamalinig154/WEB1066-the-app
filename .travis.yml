@@ -1,7 +1,12 @@
 language: java
-jdk: oraclejdk9
-env:
-  COVERAGE=0.5
+matrix:
+  include:
+    - jdk: oraclejdk9
+      env:
+        COVERAGE=0.24
+    - jdk: oraclejdk10
+      env:
+        COVERAGE=0.24
 script:
   # Run ANSIBLE checks
   # - ANSIBLE0008: Disabled for use of sudo warnings - to address
